@@ -18,6 +18,9 @@ const routes: Routes = [
 	     	{
      	path: 'employeedomain/employeedetails', loadChildren: './../pages/employeesystem/employeedomain/employeedetails/employeedetails.module#EmployeedetailsModule'
      	},	
+	     	{
+     	path: 'employeedomain/employeelist', loadChildren: './../pages/employeesystem/employeedomain/employeelist/employeelist.module#EmployeelistModule'
+     	},	
 	    ]
   }
 ];
