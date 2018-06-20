@@ -1,0 +1,122 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Employee Registration
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="2">
+                <amexio-text-input [field-label]="'Emp ID'" [(ngModel)]="employeeregistrationModel.id" name="employeeregistrationModel.id" [place-holder]="'Enter Emp ID'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'First Name'" [(ngModel)]="employeeregistrationModel.firstName" name="employeeregistrationModel.firstName" [place-holder]="'Enter first name'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="5">
+                <amexio-text-input [field-label]="'Last Name'" [(ngModel)]="employeeregistrationModel.lastName" name="employeeregistrationModel.lastName" [place-holder]="'Last Name'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-radio-group [field-label]="'Gender'" name="employeeregistrationModel.genderId" [data-reader]="'data'" [display-field]="'gender'" [value-field]="'genderId'" [data]="radiogroupData" [horizontal]="true">
+                </amexio-radio-group>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-number-input [field-label]="'Age'" [(ngModel)]="employeeregistrationModel.age" name="employeeregistrationModel.age" [place-holder]="'Enter Age'" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                </amexio-number-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-date-time-picker [field-label]="'DOB'" [date-picker]="true" [(ngModel)]="employeeregistrationModel.dob" name="employeeregistrationModel.dob">
+                </amexio-date-time-picker>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-text-input [field-label]="'Phone No.'" [(ngModel)]="employeeregistrationModel.phone" name="employeeregistrationModel.phone" [place-holder]="'Enter Phone No.'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-email-input [field-label]="'Email'" [(ngModel)]="employeeregistrationModel.email" name="employeeregistrationModel.email" [place-holder]="'Enter email Id'" [allow-blank]="true" [font-size]="10" [has-label]="true">
+                </amexio-email-input>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="employeeregistrationModel.departmentId" name="employeeregistrationModel.departmentId" [field-label]="'Department'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/dept/findall'" [http-method]="'get'" [display-field]="'name'"
+                    [value-field]="'id'" [search]="'true'">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-fieldset [title]="'Temp Address'">
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'Address Label'" [(ngModel)]="employeeregistrationModel.tempAddLabel" name="employeeregistrationModel.tempAddLabel" [place-holder]="'Enter Address Label'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10"
+                        [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'Address Line 1'" [(ngModel)]="employeeregistrationModel.tempAddone" name="employeeregistrationModel.tempAddone" [place-holder]="'Enter Address'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10"
+                        [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+            </amexio-row>
+
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'City'" [(ngModel)]="employeeregistrationModel.tempCity" name="employeeregistrationModel.tempCity" [place-holder]="'Enter City'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-number-input [field-label]="'Zipcode'" [(ngModel)]="employeeregistrationModel.tempZip" name="employeeregistrationModel.tempZip" [place-holder]="'Enter Zipcode'" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                    </amexio-number-input>
+                </amexio-column>
+            </amexio-row>
+
+        </amexio-fieldset>
+        <amexio-row>
+            <amexio-column size="12">
+                <amexio-checkbox [field-label]="'Same as temprory address'" [(ngModel)]="employeeregistrationModel.chk" name="employeeregistrationModel.chk" [required]="true" (onSelection)="onSelection_chk($event)">
+                </amexio-checkbox>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-fieldset [title]="'Parmanent Address'">
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'Address Label'" [(ngModel)]="employeeregistrationModel.parAddresslabel" name="employeeregistrationModel.parAddresslabel" [place-holder]="'Enter Address Label'" [allow-blank]="true" [min-length]="0" [max-length]="20"
+                        [font-size]="10" [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'Address Line 1'" [(ngModel)]="employeeregistrationModel.parAddressone" name="employeeregistrationModel.parAddressone" [place-holder]="'Enter Address '" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10"
+                        [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+            </amexio-row>
+
+            <amexio-row>
+                <amexio-column size="6">
+                    <amexio-text-input [field-label]="'city'" [(ngModel)]="employeeregistrationModel.parcity" name="employeeregistrationModel.parcity" [place-holder]="'Enter City'" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                    </amexio-text-input>
+                </amexio-column>
+                <amexio-column size="6">
+                    <amexio-number-input [field-label]="'Zipcode'" [(ngModel)]="employeeregistrationModel.parZip" name="employeeregistrationModel.parZip" [place-holder]="'Enter Zipcode'" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+                    </amexio-number-input>
+                </amexio-column>
+            </amexio-row>
+
+        </amexio-fieldset>
+
+    </amexio-body>
+
+    <amexio-action>
+        <amexio-button [label]="'Register'" [icon]="'fa fa-save fa 2x'" [type]="'theme-color'" [tooltip]="'button'" [size]="'xsmall'" [form-bind]="'saveBtn'" (onClick)="onClick_saveBtn($event)">
+        </amexio-button>
+
+    </amexio-action>
+</amexio-card>

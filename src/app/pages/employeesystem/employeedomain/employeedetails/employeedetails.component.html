@@ -1,0 +1,61 @@
+<amexio-row>
+    <amexio-column size="12">
+        <amexio-dropdown [(ngModel)]="employeedetailsModel.empId" name="employeedetailsModel.empId" [field-label]="'Employee'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [display-field]="'firstName'" [value-field]="'id'"
+            [search]="'true'">
+        </amexio-dropdown>
+    </amexio-column>
+</amexio-row>
+
+<amexio-row>
+    <amexio-column size="12">
+        <amexio-button [label]="'Get Employee Details'" [type]="'green'" [tooltip]="'button'" [size]="'default'" [form-bind]="'Btn'" (onClick)="onClick_Btn($event)">
+        </amexio-button>
+    </amexio-column>
+</amexio-row>
+
+<amexio-fieldset [title]="'Employee Details'">
+    <amexio-row>
+        <amexio-column size="6">
+            <amexio-text-input [field-label]="'First Name'" [(ngModel)]="employeedetailsModel.firstName" name="employeedetailsModel.firstName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            </amexio-text-input>
+        </amexio-column>
+        <amexio-column size="6">
+            <amexio-text-input [field-label]="'Last name'" [(ngModel)]="employeedetailsModel.lastName" name="employeedetailsModel.lastName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            </amexio-text-input>
+        </amexio-column>
+    </amexio-row>
+
+    <amexio-row>
+        <amexio-column size="6">
+            <amexio-text-input [field-label]="'Phone No.'" [(ngModel)]="employeedetailsModel.phone" name="employeedetailsModel.phone" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            </amexio-text-input>
+        </amexio-column>
+        <amexio-column size="6">
+            <amexio-text-input [field-label]="'DOB'" [(ngModel)]="employeedetailsModel.dob" name="employeedetailsModel.dob" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            </amexio-text-input>
+        </amexio-column>
+    </amexio-row>
+
+    <amexio-row>
+        <amexio-column size="6">
+            <amexio-radio-group [field-label]="'Gender'" name="employeedetailsModel.genderId" [data-reader]="'data'" [display-field]="'gender'" [value-field]="'genderId'" [data]="radiogroupData" [horizontal]="true" (onSelection)="onSelection_genderId($event)">
+            </amexio-radio-group>
+        </amexio-column>
+        <amexio-column size="6">
+            <amexio-number-input [field-label]="'Age'" [(ngModel)]="employeedetailsModel.age" name="employeedetailsModel.age" [allow-blank]="true" [font-size]="10" [has-label]="true" [min-value]="0" [max-value]="20">
+            </amexio-number-input>
+        </amexio-column>
+    </amexio-row>
+
+    <amexio-row>
+        <amexio-column size="6">
+            <amexio-email-input [field-label]="'Email'" [(ngModel)]="employeedetailsModel.emailId" name="employeedetailsModel.emailId" [allow-blank]="true" [font-size]="10" [has-label]="true">
+            </amexio-email-input>
+        </amexio-column>
+        <amexio-column size="6">
+            <amexio-text-input [field-label]="'Department'" [(ngModel)]="employeedetailsModel.departmentId" name="employeedetailsModel.departmentId" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            </amexio-text-input>
+        </amexio-column>
+    </amexio-row>
+
+</amexio-fieldset>
