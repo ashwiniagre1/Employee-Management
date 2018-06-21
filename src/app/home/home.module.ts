@@ -1,5 +1,5 @@
 /**
- * Created by Sagar Jadhav.
+ * Created by sagar on 12/2/18.
  */
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
@@ -12,16 +12,8 @@ import {AmexioWidgetModule} from "amexio-ng-extensions";
 const routes: Routes = [
   { path: '', component:HomeComponent,
     children: [
-          	{
-     	path: 'employeedomain/employeeregistration', loadChildren: './../pages/employeesystem/employeedomain/employeeregistration/employeeregistration.module#EmployeeregistrationModule'
-     	},	
-	     	{
-     	path: 'employeedomain/employeedetails', loadChildren: './../pages/employeesystem/employeedomain/employeedetails/employeedetails.module#EmployeedetailsModule'
-     	},	
-	     	{
-     	path: 'employeedomain/employeelist', loadChildren: './../pages/employeesystem/employeedomain/employeelist/employeelist.module#EmployeelistModule'
-     	},	
-	    ]
+
+    ]
   }
 ];
 

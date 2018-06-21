@@ -1,7 +1,7 @@
 <amexio-row>
     <amexio-column size="12">
         <amexio-dropdown [(ngModel)]="employeedetailsModel.empId" name="employeedetailsModel.empId" [field-label]="'Employee'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/emp/findall'" [http-method]="'get'" [display-field]="'firstName'" [value-field]="'id'"
-            [search]="'true'">
+            [search]="'true'" (onSingleSelect)="onSingleSelect_empId($event)">
         </amexio-dropdown>
     </amexio-column>
 </amexio-row>
@@ -16,11 +16,11 @@
 <amexio-fieldset [title]="'Employee Details'">
     <amexio-row>
         <amexio-column size="6">
-            <amexio-text-input [field-label]="'First Name'" [(ngModel)]="employeedetailsModel.firstName" name="employeedetailsModel.firstName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            <amexio-text-input [field-label]="'First Name'" [(ngModel)]="employeedetailsModel.firstName" name="employeedetailsModel.firstName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true" (onBlur)="onBlur_firstName($event)">
             </amexio-text-input>
         </amexio-column>
         <amexio-column size="6">
-            <amexio-text-input [field-label]="'Last name'" [(ngModel)]="employeedetailsModel.lastName" name="employeedetailsModel.lastName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+            <amexio-text-input [field-label]="'Last name'" [(ngModel)]="employeedetailsModel.lastName" name="employeedetailsModel.lastName" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true" (onBlur)="onBlur_lastName($event)">
             </amexio-text-input>
         </amexio-column>
     </amexio-row>
@@ -54,7 +54,7 @@
         </amexio-column>
         <amexio-column size="6">
             <amexio-dropdown [(ngModel)]="employeedetailsModel.departmentId" name="employeedetailsModel.departmentId" [field-label]="'Department'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/dept/findall'" [http-method]="'get'" [display-field]="'name'"
-                [value-field]="'id'">
+                [value-field]="'id'" (onSingleSelect)="onSingleSelect_departmentId($event)">
             </amexio-dropdown>
         </amexio-column>
     </amexio-row>
