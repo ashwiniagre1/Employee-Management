@@ -1,6 +1,6 @@
 /**
- * Created by: deepali arvind
- * Date: 20/06/2018
+ * Created by: Demo User
+ * Date: 21/06/2018
  * Organization: Individual	
  */
 import {Component, OnInit} from '@angular/core';
@@ -16,8 +16,6 @@ export class EmployeedetailsComponent implements OnInit{
     this.employeedetailsModel=new EmployeedetailsModel();
      	 	this.radiogroupData={"data":[{"gender":"female","genderId":"1"},{"gender":"male","genderId":"2"}]};
 	  }
-  onSingleSelect_empId(eventData:any){ 
- } 
   onClick_Btn(eventData:any){ 
 let response: any;
 const requestJson={
@@ -46,19 +44,13 @@ this.employeedetailsModel.departmentId =response.response.departmentId;
 
 
  } 
-  onBlur_firstName(eventData:any){ 
- } 
-  onBlur_lastName(eventData:any){ 
- } 
   onSelection_genderId(eventData:any){ 
- } 
-  onSingleSelect_departmentId(eventData:any){ 
+this.employeedetailsModel.phone =this.employeedetailsModel.genderId; 
+
  } 
   ngOnInit(){
- 	  }
- 	 	
+ 		  }
+ 	 	}
 
-   
-}
 export class EmployeedetailsModel{
   empId: string;  firstName: string;  lastName: string;  phone: string;  dob: string;  genderId: string;  age: number;  emailId: string;  departmentId: string; }

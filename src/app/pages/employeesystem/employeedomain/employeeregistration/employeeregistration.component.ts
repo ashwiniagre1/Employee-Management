@@ -1,6 +1,6 @@
 /**
- * Created by: deepali arvind
- * Date: 20/06/2018
+ * Created by: Demo User
+ * Date: 21/06/2018
  * Organization: Individual	
  */
 import {Component, OnInit} from '@angular/core';
@@ -51,10 +51,8 @@ saveBtnBindResponse_1(response: any){
 
  } 
   ngOnInit(){
- 	  }
- 	 	
+ 		  }
+ 	 	}
 
-   
-}
 export class EmployeeregistrationModel{
   id: string;  firstName: string;  lastName: string;  genderId: string;  age: number;  dob: string;  phone: string;  email: string;  departmentId: string;  tempAddLabel: string;  tempAddone: string;  tempCity: string;  tempZip: number;  chk: string;  parAddresslabel: string;  parAddressone: string;  parcity: string;  parZip: number; }
