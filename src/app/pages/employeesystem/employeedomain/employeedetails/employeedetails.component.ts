@@ -45,8 +45,6 @@ this.employeedetailsModel.departmentId =response.response.departmentId;
 
  } 
   onSelection_genderId(eventData:any){ 
-this.employeedetailsModel.phone =this.employeedetailsModel.genderId; 
-
  } 
   ngOnInit(){
  		  }

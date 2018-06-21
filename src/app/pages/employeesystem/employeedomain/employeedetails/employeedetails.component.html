@@ -53,8 +53,9 @@
             </amexio-email-input>
         </amexio-column>
         <amexio-column size="6">
-            <amexio-text-input [field-label]="'Department'" [(ngModel)]="employeedetailsModel.departmentId" name="employeedetailsModel.departmentId" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
-            </amexio-text-input>
+            <amexio-dropdown [(ngModel)]="employeedetailsModel.departmentId" name="employeedetailsModel.departmentId" [field-label]="'Department'" [http-url]="'https://uat.amexio.org:8991/rest-sample-app/api/dept/findall'" [http-method]="'get'" [display-field]="'name'"
+                [value-field]="'id'">
+            </amexio-dropdown>
         </amexio-column>
     </amexio-row>
 
